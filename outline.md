@@ -77,7 +77,7 @@
     - Get a quote for a specific property by clicking the "Get Quote" button in property list or property details page
     - Subscribe to email news letter
 
-# Database
+# Database: premium_spaces
 - users
     - email (TEXT, PK)
     - full_name (VARCHAR(100))
