@@ -1,0 +1,12 @@
+# Things To Do
+- Create functional tree
+- Create page index
+- Create database index
+- Configure UI Kit
+- Create actual tables for DB
+- Create fundamental front-end pages for authentication:
+    - Registration
+    - Login
+    - Password recovery through email
+- Write back-end for authentication, registration & login
+- Write AJAX logic for authentication, registration & login

@@ -1,0 +1,77 @@
+# User Roles
+- Administrator (admin)
+- Registered User (user)
+- Unregistered User (visitor)
+
+# Functional Tree
+## admin
+    - Browse real estate properties
+    - View details of properties
+    - Search properties using filters
+        - Type: Flat, Home, Plot, Commercial
+        - Payment: Rent, Buy
+        - Area Size
+        - Number of Rooms
+        - Number of Bedrooms
+        - Number of Washrooms
+        - Number of Kitchens
+    - Manage real estate properties
+        - Add new property
+            - title
+            - title_image
+            - area
+            - rooms
+            - bedrooms
+            - washrooms
+            - kitchens
+        - Edit property details
+        - Remove property
+        - Show/hide properties
+    - Manage Users
+        - Add new admin
+            - email
+            - full_name
+            - password
+            - confirm_password
+            - mob_no
+        - Add new user
+            - email
+            - full_name
+            - password
+            - confirm_password
+            - mob_no (optional)
+            - address
+            - county
+            - zip_code
+        - List all users
+        - Enable/disable user
+        - Remove user
+        - View user details
+        - Edit user details
+## visitor
+    - Register
+    - Login
+    - Browse real estate properties
+    - View details of properties
+    - Search properties using filters
+        - Type: Flat, Home, Plot, Commercial
+        - Payment: Rent, Buy
+        - Area Size
+        - Number of Rooms
+        - Number of Bedrooms
+        - Number of Washrooms
+    - Get a quote by call by clicking the contact us button from page header/footer
+    - Subscribe to email news letter
+## user
+    - Browse real estate properties
+    - View details of properties
+    - Search properties using filters
+        - Type: Flat, Home, Plot, Commercial
+        - Payment: Rent, Buy
+        - Area Size
+        - Number of Rooms
+        - Number of Bedrooms
+        - Number of Washrooms
+    - Get a quote by call by clicking the contact us button from page header/footer
+    - Get a quote for a specific property by clicking the "Get Quote" button in property list or property details page
+    - Subscribe to email news letter
