@@ -19,6 +19,7 @@
         - Add new property
             - title
             - title_image
+            - details
             - area
             - rooms
             - bedrooms
@@ -75,3 +76,24 @@
     - Get a quote by call by clicking the contact us button from page header/footer
     - Get a quote for a specific property by clicking the "Get Quote" button in property list or property details page
     - Subscribe to email news letter
+
+# Database
+- users
+    - email (TEXT, PK)
+    - full_name (VARCHAR(100))
+    - passwordHash (VARCHAR(200))
+    - user_type (ENUM (admin, user))
+    - mob_no (VARCHAR(20))
+    - address (TEXT)
+    - county (VARCHAR(20))
+    - zip_code (VARCHAR(20))
+- properties
+    - id (INT, PK)
+    - title (VARCHAR(100))
+    - title_image_url (VARCHAR(200))
+    - details (TEXT)
+    - area (FLOAT)
+    - rooms (INT)
+    - bedrooms (INT)
+    - washrooms (INT)
+    - kitchens (INT)
