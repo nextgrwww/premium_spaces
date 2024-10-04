@@ -589,7 +589,7 @@ var addUserSearch = ()=>{
                 <select id="sort" name="sort" class="browser-default custom-select mdb-select md-form col-lg">
                     <option disabled selected value="username">Sort Users By</option>
                     <option value="username">Username</option>
-                    <option value="fullname">Full Name</option>
+                    <option value="full_name">Full Name</option>
                     <option value="join_on">Date joined</option>
                     <option value="user_type_title">User Type</option>
 
@@ -648,7 +648,7 @@ var addUserSearch = ()=>{
                                     <img src="${(JSO[user].display_pic_url)?JSO[user].display_pic_url:"./img/svg/user-solid.svg"}" width="100%" alt="">
                                 </div>
                                 <div class="card-block p-2">
-                                    <h4 class="card-title">${JSO[user].fullname}</h4>
+                                    <h4 class="card-title">${JSO[user].full_name}</h4>
                                     <div class="text-link text-primary"><a href="user_details.php?username=${JSO[user].username}">@${JSO[user].username}</a></div>
                                     <p class="card-text">${JSO[user].user_type_title}</p>
                                 </div>
