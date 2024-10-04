@@ -7,11 +7,11 @@ $JSONData = json_decode($_REQUEST['JSONData']);
 $JSONData = (array)$JSONData;
 // var_dump($_REQUEST);
 // var_dump($JSONData);
-$username = $JSONData["username"];
+$email = $JSONData["email"];
 $passwordHash = $JSONData['passwordHash'];
 
 // Creating query string
-$dbquery = "SELECT * FROM $dbtable WHERE username = '$username' AND passwordHash = '$passwordHash'";
+$dbquery = "SELECT * FROM $dbtable WHERE email = '$email' AND passwordHash = '$passwordHash'";
 
 // Running query string and stroring results
 $result = $conn->query($dbquery);
@@ -23,13 +23,13 @@ $return_array = ["query" => $dbquery, "return_title" => "", "return_message" => 
 if($result->num_rows > 0){
     // Store results in case of something is returned
     $return_array["return_title"] = "Logged In";
-    $return_array["return_message"] = "The username and password are valid.";
+    $return_array["return_message"] = "The email and password are valid.";
     $return_array["return_type"] = "success";
 }
 else{
     // Store results in case of something is returned
     $return_array["return_title"] = "Operation Failed with $result->num_rows number of rows";
-    $return_array["return_message"] = "The username and password did not match.";
+    $return_array["return_message"] = "The email and password did not match.";
     $return_array["return_type"] = "error";
 }
 

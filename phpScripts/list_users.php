@@ -11,11 +11,11 @@ $direction = $_REQUEST["direction"];
 // Build query
 $dbquery = "SELECT * FROM user_list";
 if($search_term != "" && $user_type != ""){
-    $dbquery .=  " WHERE (username RLIKE '$search_term' OR full_name RLIKE '$search_term')";
+    $dbquery .=  " WHERE (email RLIKE '$search_term' OR full_name RLIKE '$search_term')";
     $dbquery .=  " AND user_type = '$user_type'";
 }
 else if($search_term != "" && $user_type == ""){
-    $dbquery .=  " WHERE (username RLIKE '$search_term' OR full_name RLIKE '$search_term')";
+    $dbquery .=  " WHERE (email RLIKE '$search_term' OR full_name RLIKE '$search_term')";
 }
 else if($search_term == "" && $user_type != ""){
     $dbquery .=  " WHERE user_type = \"$user_type\"";
@@ -35,7 +35,7 @@ $result = $conn->query($dbquery);
 $resultArray = array();
 if($result){
     while ($row = mysqli_fetch_assoc($result)){
-        $resultArray[$row['username']] = $row;
+        $resultArray[$row['email']] = $row;
         // array_push($resultArray[], $row);
         // print_r($row);
     }

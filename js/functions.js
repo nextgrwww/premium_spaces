@@ -284,11 +284,11 @@ function JSON2form(JSONStr, formSelector){
 **======================================*/
 var onLoadAuthentication = (domainName)=>{
     var returnValue = true;
-    if(localStorage.getItem(domainName + "/username") && localStorage.getItem(domainName + "/passwordHash")){
-        var username = localStorage.getItem(domainName + "/username");
+    if(localStorage.getItem(domainName + "/email") && localStorage.getItem(domainName + "/passwordHash")){
+        var email = localStorage.getItem(domainName + "/email");
         var passwordHash = localStorage.getItem(domainName + "/passwordHash");
         
-        var JSONData = `{"username": "${username}", "passwordHash": "${passwordHash}"}`;
+        var JSONData = `{"email": "${email}", "passwordHash": "${passwordHash}"}`;
         var XHR = new XMLHttpRequest();
         XHR.open("POST", "./phpScripts/loginScript.php", false);
         XHR.onreadystatechange = ()=>{
@@ -299,12 +299,12 @@ var onLoadAuthentication = (domainName)=>{
                 
                 if(JSO.return_type=="success") {
                     
-                    localStorage.setItem(domainName + "/username", username);
+                    localStorage.setItem(domainName + "/email", email);
                     localStorage.setItem(domainName + "/passwordHash", passwordHash);
                     returnValue = true;
                 }
                 if(JSO.return_type=="error") {
-                    localStorage.removeItem(domainName + "/username");
+                    localStorage.removeItem(domainName + "/email");
                     localStorage.removeItem(domainName + "/passwordHash");
                     
                     returnValue = false;
@@ -327,7 +327,7 @@ var onLoadAuthentication = (domainName)=>{
 *************************/
 
 var logout = (domainName)=>{
-    localStorage.removeItem(domainName + "/username");
+    localStorage.removeItem(domainName + "/email");
     localStorage.removeItem(domainName + "/passwordHash");
     window.location.reload();
 }
@@ -424,9 +424,9 @@ var JSON2navbar = (JSONStr, navSelector)=>{
 
 var getUserRole = (domainName)=>{
     var returnValue;
-    var username = localStorage.getItem(domainName + "/username");
+    var email = localStorage.getItem(domainName + "/email");
     var passwordHash = localStorage.getItem(domainName + "/passwordHash");
-    if(!username) returnValue = {username: "visitor", user_type: 0, user_type_title: "visitor"};
+    if(!email) returnValue = {email: "visitor", user_type: 0, user_type_title: "visitor"};
     else{
         var XHR = new XMLHttpRequest();
         XHR.open("POST", "./phpScripts/getRole.php", false);
@@ -438,7 +438,7 @@ var getUserRole = (domainName)=>{
             }
         }
         XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        XHR.send("username=" + username + "&passwordHash=" + passwordHash);
+        XHR.send("email=" + email + "&passwordHash=" + passwordHash);
     }
     return returnValue;
 }
@@ -587,8 +587,8 @@ var addUserSearch = ()=>{
                     <option value="bidder">Bidder</option>
                 </select>
                 <select id="sort" name="sort" class="browser-default custom-select mdb-select md-form col-lg">
-                    <option disabled selected value="username">Sort Users By</option>
-                    <option value="username">Username</option>
+                    <option disabled selected value="email">Sort Users By</option>
+                    <option value="email">email</option>
                     <option value="full_name">Full Name</option>
                     <option value="join_on">Date joined</option>
                     <option value="user_type_title">User Type</option>
@@ -649,12 +649,12 @@ var addUserSearch = ()=>{
                                 </div>
                                 <div class="card-block p-2">
                                     <h4 class="card-title">${JSO[user].full_name}</h4>
-                                    <div class="text-link text-primary"><a href="user_details.php?username=${JSO[user].username}">@${JSO[user].username}</a></div>
+                                    <div class="text-link text-primary"><a href="user_details.php?email=${JSO[user].email}">@${JSO[user].email}</a></div>
                                     <p class="card-text">${JSO[user].user_type_title}</p>
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="card-footer w-100 text-muted p-1 justify-content-end text-right">
-                                    <a href="user_details.php?username=${JSO[user].username}" class="btn btn-outline-primary btn-sm">Details</a>
+                                    <a href="user_details.php?email=${JSO[user].email}" class="btn btn-outline-primary btn-sm">Details</a>
                                 </div>
                             </div>
                         </div>

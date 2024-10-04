@@ -3,11 +3,11 @@
     include_once("connection.php");
 
     // Getting query parameters from JSONData
-    $username = $_REQUEST['username'];
+    $email = $_REQUEST['email'];
     $passwordHash = $_REQUEST['passwordHash'];
 
     // Create query string
-    $dbquery = "SELECT `users`.`user_type` FROM `users` WHERE `users`.`username` = \"$username\" AND `users`.`passwordHash`=\"$passwordHash\";";
+    $dbquery = "SELECT `users`.`user_type` FROM `users` WHERE `users`.`email` = \"$email\" AND `users`.`passwordHash`=\"$passwordHash\";";
 
     // Run query and get result set
     $result = $conn->query($dbquery);
