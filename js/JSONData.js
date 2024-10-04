@@ -1,6 +1,6 @@
 var reg_form = `{
     "legend": "Get Started..", "class": "reg_info", "submit":"Sign-up", "reset": "Clear" , "method": "post", "actionScript": "./phpScripts/register.php", "errorAlert": "true", "data": {
-        "input1": {"id": "email", "type": "text", "label": "Email", "classes": "col-md-12", "regex": "^[a-zA-Z][a-zA-Z0-9._]*@[a-zA-Z]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$", "error": "Invalid email: Must start with a letter, only contain letters, numbers, dots (.), underscores (_), and have a valid domain (e.g., 'abc.com').", "required": "true"},
+        "input1": {"id": "email", "type": "text", "label": "Email", "classes": "col-md-12", "regex": "^[a-zA-Z][a-zA-Z0-9._]*@[a-zA-Z]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$", "error": "Invalid email: Must start with a letter, only contain letters, numbers, dots (.), underscores (_), and have a valid domain (e.g., 'abc.com')", "required": "true"},
         "input2": {"id": "full_name", "type": "text", "label": "Full Name", "classes": "col-md-12", "regex": "^[a-zA-Z]+([ '-][a-zA-Z]+)*$", "error": "Invalid name: Only letters, spaces, and hyphens are allowed.", "required": "true"},
         "input3": {"id": "password", "type": "password", "label": "Choose Password", "classes": "col-md-12", "regex": "^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[~!@#$%^&*()_\\\\+\\\\-=]).{8,}$", "error": "Choose a complex password with atleast one uppercase, lowercase, number and special character.", "required": "true"},
         "input4": {"id": "confirmpass", "type": "password", "label": "Confirm Password", "classes": "col-md-12", "error": "Password in both fields does not match", "required": "true"},
@@ -13,8 +13,8 @@ var reg_form = `{
 
 var login_form = `{
     "legend": "Sign-in", "class": "login_credentials", "submit":"Login", "reset": "Clear", "method": "post", "actionScript": "./phpScripts/loginScript.php", "data": {
-        "input1": {"type": "text", "id":"username", "label": "Enter Your Username", "classes": "col-md-12", "regex": "^[a-zA-Z0-9_]{3,100}$", "error": "The username is not valid", "required": "true", "localStore":"builders_bid"},
-        "input2": {"type": "password", "id": "password", "label": "Enter Password", "classes": "col-md-12", "regex": "^.{8,20}$", "error": "The username and/or password does not match", "required": "true", "localStore":"builders_bid"},
+        "input1": {"type": "text", "id":"email", "label": "Enter Your Email", "classes": "col-md-12", "regex": "^[a-zA-Z][a-zA-Z0-9._]*@[a-zA-Z]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$", "error": "Invalid email: Must start with a letter, only contain letters, numbers, dots (.), underscores (_), and have a valid domain (e.g., 'abc.com')", "required": "true", "localStore":"premium_spaces"},
+        "input2": {"type": "password", "id": "password", "label": "Enter Password", "classes": "col-md-12", "regex": "^.{8,20}$", "error": "The username and/or password does not match", "required": "true", "localStore":"premium_spaces"},
         "input3": {"type": "checkgroup", "id": "remember", "label": "", "values": [{"id": "remember_check", "label": "Remember me"}], "classes": "col-md-12"}
     }
 }`;
@@ -33,7 +33,7 @@ var navbar_items_admin = `{
         "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
         "item3": {"label": "<i class='fas fa-user-shield'></i> Member's Area", "link": "members_area.php"},
         "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
-        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('builders_bid')"}
+        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
     }
 }`;
 
@@ -42,7 +42,7 @@ var navbar_items_bidder = `{
         "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
         "item3": {"label": "<i class='fas fa-user-shield'></i> Member's Area", "link": "members_area.php"},
         "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
-        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('builders_bid')"}
+        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
     }
 }`;
 
@@ -51,7 +51,7 @@ var navbar_items_client = `{
         "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
         "item3": {"label": "<i class='fas fa-box-open'></i> My Orders", "link": "my_orders.php"},
         "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
-        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('builders_bid')"}
+        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
     }
 }`;
 
