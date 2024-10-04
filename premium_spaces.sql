@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2024 at 06:26 PM
+-- Generation Time: Oct 04, 2024 at 07:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -53,7 +53,8 @@ CREATE TABLE `users` (
   `mob_no` varchar(20) DEFAULT NULL,
   `address` text DEFAULT NULL,
   `county` varchar(20) DEFAULT NULL,
-  `zip_code` varchar(20) DEFAULT NULL
+  `zip_code` varchar(20) DEFAULT NULL,
+  `status` enum('enabled','disabled','pending') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
