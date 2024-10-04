@@ -6,66 +6,47 @@ include_once("connection.php");
 $return_array = ["query" => "", "return_title" => "", "return_message" => "", "return_type" => ""];
 
 // Getting query parameters from JSONData
-$JSONData = json_decode($_POST['JSONData']);
+$JSONData = json_decode($_REQUEST['JSONData']);
 $JSONData = (array)$JSONData;
-$username = $JSONData['username'];
-$passwordHash = $JSONData['passwordHash'];
-$user_type = ($JSONData['user_type']=="admin")?1:($JSONData['user_type']=="client")?2:3;
-$approval = 1;
 
-$firstname = $JSONData['firstname'];
-$lastname = $JSONData['lastname'];
-$company_name = $JSONData['company_name'];
-$gender = $JSONData['gender'];
-$date_of_birth = $JSONData['dob'];
 $email = $JSONData['email'];
-$cell_no = $JSONData['cell_no'];
-$cnic = $JSONData['cnic'];
-$street_address = $JSONData['street_address'];
-$city = $JSONData['city'];
-$country = $JSONData['country'];
+$full_name = $JSONData['full_name'];
+$passwordHash = $JSONData['passwordHash'];
+$user_type = $JSONData['user_type'];
+$mob_no = $JSONData['mob_no'];
+$address = $JSONData['address'];
+$county = $JSONData['county'];
+$zip_code = $JSONData['zip_code'];
+$status = $JSONData['enabled'];
 
-// Create pre-query string
-$dbprequery1 = "SELECT * FROM users WHERE `username` = \"$username\"";
-$pre_result1 = $conn->query($dbprequery1);
-$dbprequery2 = "SELECT * FROM user_info WHERE `username` = \"$username\"";
-$pre_result2 = $conn->query($dbprequery2);
+// Create pre-query string to check if the email is already registered
+$dbprequery = "SELECT * FROM users WHERE `email` = \"$email\"";
+$pre_result = $conn->query($dbprequery1);
 
 if($pre_result1->num_rows || $pre_result2->num_rows){
     $return_array["return_title"] = "Error";
-    $return_array["return_message"] = "Username already exists";
-    $return_array["query"] = $dbprequery1 . " and " . $dbprequery2;
+    $return_array["return_message"] = "Email already registered. \nIf you've lost password, try to recover using the \"forgot password\" option";
+    $return_array["query"] = $dbprequery;
     $return_array["return_type"] = "error";
 }
 else{
     // Create query string 1
-    $dbquery1 = "INSERT INTO users (`username`, `passwordHash`, `user_type`, `approval`) VALUES (\"$username\", \"$passwordHash\", $user_type, $approval)";
+    $dbquery = "INSERT INTO `users` (`email`, `full_name`, `passwordHash`, `user_type`, `mob_no`, `address`, `county`, `zip_code`, `status`) VALUES (\"$email\", \"$full_name\", \"$passwordHash\", \"$user_type\", \"$mob_no\", \"$address\", \"$county\", \"$zip_code\", \"$status\");";
 
     // Running query string and stroring results
-    $result1 = $conn->query($dbquery1);
+    $result = $conn->query($dbquery);
 
-    // Create query string 2
-    $dbquery2 = "INSERT INTO user_info (`username`, `firstname`, `lastname`, `company_name`, `gender`, `date_of_birth`, `email`, `cell_no`, `cnic`, `street_address`, `city`, `country`) VALUES (\"$username\", \"$firstname\", \"$lastname\", \"$company_name\", \"$gender\", \"$date_of_birth\", \"$email\", \"$cell_no\", \"$cnic\", \"$street_address\", \"$city\", \"$country\")";
-
-    // Running query string and stroring results
-    $result2 = $conn->query($dbquery2);
-
-    // Check results and update $return_array accordingly
-    $return_array = ["query" => $dbquery1 . "\n" . $dbquery2, "return_title" => "print_r", "return_message" => "Query Generated Successfully", "return_type" => "success"];
-
-    if($result1 && $result2) {
-        $return_array["return_title"] = "Success";
-        $return_array["return_type"] = "success";
+    
+    if($result) {
+        // Check results and update $return_array accordingly
+        $return_array = ["query" => $dbquery, "return_title" => "Registration successful", "return_message" => "Registration successful. ", "return_type" => "success"];
     }
-    else $return_array["return_title"] = "error";
-
-    // if($result1) $return_array["return_message"] = "Query1 executed successfully ";
-    // else $return_array["return_message"] = "Query1 failed to execute ";
-
-    // if($result2) $return_array["return_message"] .= "and Query2 executed successfully.";
-    // else $return_array["return_message"] .= "and Query2 failed to execute";
-
-    if($result1 && $result2) $return_array["return_message"] = "User registered successfully";
+    else {
+        $return_array["return_title"] = "error";
+        $return_array["return_message"] = "Something went wrong";
+        $return_array["return_type"] = "error";
+        $return_array["query"] = $dbquery;
+    }
 }
 
 // Encoding associative array into JSON for returning
