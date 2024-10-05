@@ -3,27 +3,30 @@
 include_once("connection.php");
 
 // Store local variables
-$search_term = $_REQUEST["search_term"];
-$user_type = $_REQUEST["user_type"];
-$sort = $_REQUEST["sort"];
-$direction = $_REQUEST["direction"];
+// if($_REQUEST["search_term"]) $search_term = $_REQUEST["search_term"];
+// if($_REQUEST["user_type"]) $user_type = $_REQUEST["user_type"];
+// if($_REQUEST["sort"]) $sort = $_REQUEST["sort"];
+// if($_REQUEST["direction"]) $direction = $_REQUEST["direction"];
+
+extract($_REQUEST);
 
 // Build query
-$dbquery = "SELECT * FROM user_list";
-if($search_term != "" && $user_type != ""){
+$dbquery = "SELECT * FROM users";
+if((isset($search_term) && $search_term != "") && (isset($user_type) && $user_type != "")){
     $dbquery .=  " WHERE (email RLIKE '$search_term' OR full_name RLIKE '$search_term')";
     $dbquery .=  " AND user_type = '$user_type'";
 }
-else if($search_term != "" && $user_type == ""){
+else if((isset($search_term) && $search_term != "") && (!isset($user_type) || $user_type == "")){
     $dbquery .=  " WHERE (email RLIKE '$search_term' OR full_name RLIKE '$search_term')";
 }
-else if($search_term == "" && $user_type != ""){
+else if((!isset($search_term) || $search_term == "") && (isset($user_type) && $user_type != "")){
     $dbquery .=  " WHERE user_type = \"$user_type\"";
 }
 else{
     $dbquery .= "";
 }
 
+if((isset($sort) && $sort!="") && (isset($direction) && $direction!=""))
 $dbquery .= " ORDER BY $sort $direction;";
 
 // echo $dbquery;

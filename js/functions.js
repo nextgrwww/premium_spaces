@@ -267,7 +267,10 @@ function JSON2form(JSONStr, formSelector){
                     $(document.querySelector("#alertModal")).modal("show");
 
                     if (responseJSO.return_type=="success" && responseJSO.return_title=="Logged In") window.location.reload();
-                    else if(responseJSO.return_type=="success" && responseJSO.return_title=="Registration successful") window.location.href = "index.php";
+                    else if(responseJSO.return_type=="success" && responseJSO.return_title=="Registration successful"){
+                        alert(responseJSO.return_title);
+                        window.location.href = "index.php";
+                    }
                 }
             }
         }
