@@ -9,21 +9,25 @@ $return_array = ["query" => "", "return_title" => "", "return_message" => "", "r
 $JSONData = json_decode($_REQUEST['JSONData']);
 $JSONData = (array)$JSONData;
 
+// echo "<pre>";
+// var_dump($JSONData);
+// echo "</pre>";
+
 $email = $JSONData['email'];
 $full_name = $JSONData['full_name'];
 $passwordHash = $JSONData['passwordHash'];
-$user_type = $JSONData['user_type'];
+$user_type = "user";
 $mob_no = $JSONData['mob_no'];
 $address = $JSONData['address'];
 $county = $JSONData['county'];
 $zip_code = $JSONData['zip_code'];
-$status = $JSONData['enabled'];
+$status = "enabled";
 
 // Create pre-query string to check if the email is already registered
 $dbprequery = "SELECT * FROM users WHERE `email` = \"$email\"";
-$pre_result = $conn->query($dbprequery1);
+$pre_result = $conn->query($dbprequery);
 
-if($pre_result1->num_rows || $pre_result2->num_rows){
+if($pre_result->num_rows){
     $return_array["return_title"] = "Error";
     $return_array["return_message"] = "Email already registered. \nIf you've lost password, try to recover using the \"forgot password\" option";
     $return_array["query"] = $dbprequery;
@@ -39,7 +43,7 @@ else{
     
     if($result) {
         // Check results and update $return_array accordingly
-        $return_array = ["query" => $dbquery, "return_title" => "Registration successful", "return_message" => "Registration successful. ", "return_type" => "success"];
+        $return_array = ["query" => $dbquery, "return_title" => "Registration successful", "return_message" => "Registration successful. ", "return_type" => "success", "redirect" => "index.php"];
     }
     else {
         $return_array["return_title"] = "error";
