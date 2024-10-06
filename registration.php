@@ -36,7 +36,7 @@
     <script src="js/JSONData.js"></script>
     <script src="js/functions.js"></script>
     <script>
-        var login_result = onLoadAuthentication("builders_bid");
+        var login_result = onLoadAuthentication("premium_spaces");
         console.log("Login result: " + login_result);
         if(login_result == true) {
             console.log("Already Logged in");

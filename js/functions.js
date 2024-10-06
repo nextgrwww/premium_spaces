@@ -436,7 +436,6 @@ var getUserRole = (domainName)=>{
         XHR.open("POST", "./phpScripts/getRole.php", false);
         XHR.onreadystatechange = ()=>{
             if(XHR.readyState == 4 && XHR.status == 200){
-                
                 var JSO = JSON.parse(XHR.responseText);
                 returnValue = JSO;
             }

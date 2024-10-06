@@ -37,19 +37,10 @@ var navbar_items_admin = `{
     }
 }`;
 
-var navbar_items_bidder = `{
+var navbar_items_user = `{
     "brand": "<i class='fas fa-home'></i> Home", "id": "mainNavBar", "data":{
         "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
         "item3": {"label": "<i class='fas fa-user-shield'></i> Member's Area", "link": "members_area.php"},
-        "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
-        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
-    }
-}`;
-
-var navbar_items_client = `{
-    "brand": "<i class='fas fa-home'></i> Home", "id": "mainNavBar", "data":{
-        "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
-        "item3": {"label": "<i class='fas fa-box-open'></i> My Orders", "link": "my_orders.php"},
         "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
         "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
     }

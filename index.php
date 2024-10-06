@@ -174,22 +174,24 @@
     <script src="js/functions.js"></script>
     <script>
 
-    var userRole = getUserRole("builders_bid");
+    var userRole = getUserRole("premium_spaces");
     if(userRole){
-        if(userRole.user_type_title=="admin"){
+        console.log("User role detected");
+        if(userRole.user_type=="admin"){
+            console.log("User role admin detected");
             JSON2navbar(navbar_items_admin, "#mainNav");
         }
-        else if(userRole.user_type_title=="client"){
-            JSON2navbar(navbar_items_client, "#mainNav");
-        }
-        else if(userRole.user_type_title=="bidder"){
-            JSON2navbar(navbar_items_client, "#mainNav");
+        else if(userRole.user_type=="user"){
+            console.log("User role \"user\" detected");
+            JSON2navbar(navbar_items_user, "#mainNav");
         }
         else{
+            console.log("User role visitor detected as: " + userRole.user_type);
             JSON2navbar(navbar_items_visitor, "#mainNav");
         }
     }
     else{
+        console.log("User role something else detected as: " + userRole.user_type);
         JSON2navbar(navbar_items_visitor, "#mainNav");
     }
 

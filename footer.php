@@ -1,5 +1,5 @@
 <footer class="bg-dark text-light p-3 d-flex justify-content-between">
-        <div>Designed & Developed by: <span class="text-primary font-weight-bold">H. Abubakr & Saba Sabir - VU ID#<span class="text-primary font-weight-bold">MC200202630 & MC200205158</span></div><div><a href="#header" class="text-primary text-link"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+        <div>Designed & Developed by: <span class="text-primary font-weight-bold">Hammad Ahmed</div><div><a href="#header" class="text-primary text-link"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
         <div class="modal fade" id="alertModal" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
