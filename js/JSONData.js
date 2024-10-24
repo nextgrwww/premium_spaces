@@ -21,9 +21,9 @@ var login_form = `{
 
 var navbar_items_visitor = `{
     "brand": "<i class='fas fa-home'></i> Home", "id": "mainNavBar", "data":{
-        "item1": {"label": "<i class='fas fa-box-open'> </i>Find a Service", "link":"#!"},
+        // "item1": {"label": "<i class='fas fa-box-open'> </i>Find a Service", "link":"#!"},
         "item2": {"label": "Login", "link": "login.php"},
-        "item3": {"label": "Register", "link": "registration.php"},
+        "item3": {"label": "Login", "link": "registration.php"},
         "item4": {"label": "About Us", "link":"#!"}
     }
 }`;
