@@ -376,6 +376,7 @@ var generateListings = (JSONStr, containerSelector) => {
 
 var JSON2navbar = (JSONStr, navSelector)=>{
     var navItem = document.querySelector(navSelector);
+    console.log(JSONStr);
     var JSO = JSON.parse(JSONStr);
     var innerHTMLString = "";
     
