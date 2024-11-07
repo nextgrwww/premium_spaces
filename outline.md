@@ -145,15 +145,15 @@
     - Section1: header.php (header, navbar)
     - Section2: Article edit user form
     - Section3: footer.php (footer)
-- footer.php
+- ~footer.php~
     - Section1: common navbar items
     - Section2: email subscription function
     - Section3: sub-footer credits
-- login.php
+- ~login.php~
     - Section1: common navbar items
     - Section2: login form
     - Section3: footer.php
-- register.php
+- ~register.php~
     - Section1: common navbar items
     - Section2: register form
     - Section3: footer.php
