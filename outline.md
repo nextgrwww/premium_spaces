@@ -5,9 +5,11 @@
 
 # Functional Tree
 ## admin
-    - Browse real estate properties
-    - View details of properties
-    - Search properties using filters
+    - Quick search properties (index.php -> hero)
+    - Browse featured properties (index.php -> featured section)
+    - Browse real estate properties (properties.php)
+    - View details of properties (property_details.php)
+    - Search properties using filters (properties.php)
         - Type: Flat, Home, Plot, Commercial
         - Payment: Rent, Buy
         - Area Size
@@ -16,7 +18,7 @@
         - Number of Washrooms
         - Number of Kitchens
     - Manage real estate properties
-        - Add new property
+        - Add new property (add_property.php)
             - title
             - title_image
             - details
@@ -25,17 +27,18 @@
             - bedrooms
             - washrooms
             - kitchens
-        - Edit property details
-        - Remove property
-        - Show/hide properties
+        - View Property Details (property_details.php)
+        - Edit property details (edit_property.php)
+        - Remove property (edit_property.php, properties.php)
+        - Show/hide properties (edit_property.php, properties.php)
     - Manage Users
-        - Add new admin
+        - Add new admin (add_admin.php)
             - email
             - full_name
             - password
             - confirm_password
             - mob_no
-        - Add new user
+        - Add new user (add_user.php)
             - email
             - full_name
             - password
@@ -44,38 +47,55 @@
             - address
             - county
             - zip_code
-        - List all users
-        - Enable/disable user
-        - Remove user
-        - View user details
-        - Edit user details
+        - List all users (users.php)
+        - Enable/disable user (users.php, edit_user.php)
+        - Remove user (users.php, edit_user.php)
+        - View user details (user_details.php)
+        - Edit user details (edit_user.php)
 ## visitor
-    - Register
-    - Login
-    - Browse real estate properties
-    - View details of properties
-    - Search properties using filters
+    - Register (register.php)
+    - Login (login.php)
+    - Browse real estate properties (properties.php)
+    - View details of properties (property_details.php)
+    - Search properties using filters (properties.php)
         - Type: Flat, Home, Plot, Commercial
         - Payment: Rent, Buy
         - Area Size
         - Number of Rooms
         - Number of Bedrooms
         - Number of Washrooms
-    - Get a quote by call by clicking the contact us button from page header/footer
-    - Subscribe to email news letter
+    - Get a quote by call by clicking the contact us button from page header/footer (navbar, footer.php)
+    - Subscribe to email news letter (footer.php)
 ## user
-    - Browse real estate properties
-    - View details of properties
-    - Search properties using filters
+    - Browse real estate properties (properties.php)
+    - View details of properties (property_details.php)
+    - Search properties using filters (properties.php)
         - Type: Flat, Home, Plot, Commercial
         - Payment: Rent, Buy
         - Area Size
         - Number of Rooms
         - Number of Bedrooms
         - Number of Washrooms
-    - Get a quote by call by clicking the contact us button from page header/footer
-    - Get a quote for a specific property by clicking the "Get Quote" button in property list or property details page
-    - Subscribe to email news letter
+    - Get a quote by call by clicking the contact us button from page header/footer (footer.php)
+    - Get a quote for a specific property by clicking  the "Get Quote" button in property list or property details page (navbar, footer.php)
+    - Subscribe to email news letter (footer.php)
+
+# Navbar
+- admin
+    - Manage Properties (properties.php)
+    - Manage Users (users.php)
+    - Send Newsletter (send_newsletter.php)
+- user
+    - buy  (properties.php?type=buy)
+    - rent (properties.php?type=rent)
+    - commercial (properties.php?type=commercial)
+    - mortgage (properties.php?type=mortgage)
+- visitor
+    - buy (properties.php?type=buy)
+    - rent (properties.php?type=rent)
+    - commercial (properties.php?type=commercial)
+    - mortgage (properties.php?type=mortgage)
+    - login (login.php)
 
 # Database: premium_spaces
 - users
@@ -97,3 +117,59 @@
     - bedrooms (INT)
     - washrooms (INT)
     - kitchens (INT)
+
+
+# Pages
+- ~index.php~
+    - Section1: header.php (header, navbar)
+    - Section2: Hero
+    - Section3: Article Boxes
+    - Section4: footer.php (footer)
+- add_admin.php
+    - Section1: header.php (header, navbar)
+    - Section2: Article list table with quick search
+    - Section3: footer.php (footer)
+- add_property.php
+    - Section1: header.php (header, navbar)
+    - Section2: Article add property form
+    - Section3: footer.php (footer)
+- add_user.php
+    - Section1: header.php (header, navbar)
+    - Section2: Article add user form
+    - Section3: footer.php (footer)
+- edit_property.php
+    - Section1: header.php (header, navbar)
+    - Section2: Article edit property form
+    - Section3: footer.php (footer)
+- edit_user.php
+    - Section1: header.php (header, navbar)
+    - Section2: Article edit user form
+    - Section3: footer.php (footer)
+- footer.php
+    - Section1: common navbar items
+    - Section2: email subscription function
+    - Section3: sub-footer credits
+- login.php
+    - Section1: common navbar items
+    - Section2: login form
+    - Section3: footer.php
+- register.php
+    - Section1: common navbar items
+    - Section2: register form
+    - Section3: footer.php
+- properties.php
+    - Section1: common navbar items
+    - Section2: content: properties sections
+    - Section3: footer.php
+- property_details.php
+    - Section1: common navbar items
+    - Section2: content: property details table
+    - Section3: footer.php
+- user_details.php
+    - Section1: common navbar items
+    - Section2: content: user details table
+    - Section3: footer.php
+- users.php
+    - Section1: common navbar items
+    - Section2: content: user list dynamic table
+    - Section3: footer.php

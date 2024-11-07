@@ -21,28 +21,30 @@ var login_form = `{
 
 var navbar_items_visitor = `{
     "brand": "<i class='fas fa-home'></i> Home", "id": "mainNavBar", "data":{
-        "item1": {"label": "<i class='fas fa-box-open'> </i>Find a Service", "link":"#!"},
-        "item2": {"label": "Login", "link": "login.php"},
-        "item3": {"label": "Login", "link": "registration.php"},
-        "item4": {"label": "About Us", "link":"#!"}
+        "item1": {"label": "<i class='fas fa-warehouse'> </i>Buy", "link":"properties.php?type=buy"},
+        "item2": {"label": "<i class='fas fa-building'> </i>Rent", "link": "properties.php?type=rent"},
+        "item3": {"label": "<i class='fas fa-store-alt'> </i>Commercial", "link": "properties.php?type=commercial"},
+        "item4": {"label": "<i class='fas fa-warehouse'> </i>Mortgage", "link":"properties.php?type=mortgage"},
+        "item5": {"label": "Login", "link": "login.php"}
     }
 }`;
 
 var navbar_items_admin = `{
     "brand": "<i class='fas fa-home'></i> Home", "id": "mainNavBar", "data":{
-        "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
-        "item3": {"label": "<i class='fas fa-user-shield'></i> Member's Area", "link": "members_area.php"},
-        "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
-        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
+        "item1": {"label": "<i class='fas fa-warehouse'></i> Manage Properties", "link":"properties.php"},
+        "item3": {"label": "<i class='fas fa-user-shield'></i> Manage Users", "link": "users.php"},
+        "item4": {"label": "<i class='fas fa-address-card'></i> Send Newsletter", "link":"send_newsletter.php"},
+        "item5": {"label": "<i class='fas fa-sign-out-alt'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
     }
 }`;
 
 var navbar_items_user = `{
     "brand": "<i class='fas fa-home'></i> Home", "id": "mainNavBar", "data":{
-        "item1": {"label": "<i class='fas fa-box-open'></i> Find a Service", "link":"#!"},
-        "item3": {"label": "<i class='fas fa-user-shield'></i> Member's Area", "link": "members_area.php"},
-        "item4": {"label": "<i class='fas fa-address-card'></i> About Us", "link":"#!"},
-        "item5": {"label": "<i class='fas fa-address-card'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
+        "item1": {"label": "<i class='fas fa-warehouse'> </i>Buy", "link":"properties.php?type=buy"},
+        "item2": {"label": "<i class='fas fa-building'> </i>Rent", "link": "properties.php?type=rent"},
+        "item3": {"label": "<i class='fas fa-store-alt'> </i>Commercial", "link": "properties.php?type=commercial"},
+        "item4": {"label": "<i class='fas fa-warehouse'> </i>Mortgage", "link":"properties.php?type=mortgage"},
+        "item5": {"label": "<i class='fas fa-sign-out-alt'></i> Logout", "link":"#!", "onclick": "logout('premium_spaces')"}
     }
 }`;
 
