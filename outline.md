@@ -5,80 +5,80 @@
 
 # Functional Tree
 ## admin
-    - Quick search properties (index.php -> hero)
-    - Browse featured properties (index.php -> featured section)
-    - Browse real estate properties (properties.php)
-    - View details of properties (property_details.php)
-    - Search properties using filters (properties.php)
-        - Type: Flat, Home, Plot, Commercial
-        - Payment: Rent, Buy
-        - Area Size
-        - Number of Rooms
-        - Number of Bedrooms
-        - Number of Washrooms
-        - Number of Kitchens
-    - Manage real estate properties
-        - Add new property (add_property.php)
-            - title
-            - title_image
-            - details
-            - area
-            - rooms
-            - bedrooms
-            - washrooms
-            - kitchens
-        - View Property Details (property_details.php)
-        - Edit property details (edit_property.php)
-        - Remove property (edit_property.php, properties.php)
-        - Show/hide properties (edit_property.php, properties.php)
-    - Manage Users
-        - Add new admin (add_admin.php)
-            - email
-            - full_name
-            - password
-            - confirm_password
-            - mob_no
-        - Add new user (add_user.php)
-            - email
-            - full_name
-            - password
-            - confirm_password
-            - mob_no (optional)
-            - address
-            - county
-            - zip_code
-        - List all users (users.php)
-        - Enable/disable user (users.php, edit_user.php)
-        - Remove user (users.php, edit_user.php)
-        - View user details (user_details.php)
-        - Edit user details (edit_user.php)
+- Quick search properties (index.php -> hero)
+- Browse featured properties (index.php -> featured section)
+- Browse real estate properties (properties.php)
+- View details of properties (property_details.php)
+- Search properties using filters (properties.php)
+    - Type: Flat, Home, Plot, Commercial
+    - Payment: Rent, Buy
+    - Area Size
+    - Number of Rooms
+    - Number of Bedrooms
+    - Number of Washrooms
+    - Number of Kitchens
+- Manage real estate properties
+    - Add new property (add_property.php)
+        - title
+        - title_image
+        - details
+        - area
+        - rooms
+        - bedrooms
+        - washrooms
+        - kitchens
+    - View Property Details (property_details.php)
+    - Edit property details (edit_property.php)
+    - Remove property (edit_property.php, properties.php)
+    - Show/hide properties (edit_property.php, properties.php)
+- Manage Users
+    - Add new admin (add_admin.php)
+        - email
+        - full_name
+        - password
+        - confirm_password
+        - mob_no
+    - Add new user (add_user.php)
+        - email
+        - full_name
+        - password
+        - confirm_password
+        - mob_no (optional)
+        - address
+        - county
+        - zip_code
+    - List all users (users.php)
+    - Enable/disable user (users.php, edit_user.php)
+    - Remove user (users.php, edit_user.php)
+    - View user details (user_details.php)
+    - Edit user details (edit_user.php)
 ## visitor
-    - Register (register.php)
-    - Login (login.php)
-    - Browse real estate properties (properties.php)
-    - View details of properties (property_details.php)
-    - Search properties using filters (properties.php)
-        - Type: Flat, Home, Plot, Commercial
-        - Payment: Rent, Buy
-        - Area Size
-        - Number of Rooms
-        - Number of Bedrooms
-        - Number of Washrooms
-    - Get a quote by call by clicking the contact us button from page header/footer (navbar, footer.php)
-    - Subscribe to email news letter (footer.php)
+- Register (register.php)
+- Login (login.php)
+- Browse real estate properties (properties.php)
+- View details of properties (property_details.php)
+- Search properties using filters (properties.php)
+    - Type: Flat, Home, Plot, Commercial
+    - Payment: Rent, Buy
+    - Area Size
+    - Number of Rooms
+    - Number of Bedrooms
+    - Number of Washrooms
+- Get a quote by call by clicking the contact us button from page header/footer (navbar, footer.php)
+- Subscribe to email news letter (footer.php)
 ## user
-    - Browse real estate properties (properties.php)
-    - View details of properties (property_details.php)
-    - Search properties using filters (properties.php)
-        - Type: Flat, Home, Plot, Commercial
-        - Payment: Rent, Buy
-        - Area Size
-        - Number of Rooms
-        - Number of Bedrooms
-        - Number of Washrooms
-    - Get a quote by call by clicking the contact us button from page header/footer (footer.php)
-    - Get a quote for a specific property by clicking  the "Get Quote" button in property list or property details page (navbar, footer.php)
-    - Subscribe to email news letter (footer.php)
+- Browse real estate properties (properties.php)
+- View details of properties (property_details.php)
+- Search properties using filters (properties.php)
+    - Type: Flat, Home, Plot, Commercial
+    - Payment: Rent, Buy
+    - Area Size
+    - Number of Rooms
+    - Number of Bedrooms
+    - Number of Washrooms
+- Get a quote by call by clicking the contact us button from page header/footer (footer.php)
+- Get a quote for a specific property by clicking  the "Get Quote" button in property list or property details page (navbar, footer.php)
+- Subscribe to email news letter (footer.php)
 
 # Navbar
 - admin
