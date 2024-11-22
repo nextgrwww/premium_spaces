@@ -13,12 +13,13 @@
 
 ---
 
-# Things To Do
+# Things To Do Today
 - ~Update navbar according to navbar definitions & page names/addresses~
 - ~Revise list of pages and add any possible missing page names~
 - ~Complete the map of pages~
-- Mark pages already present and the ones need to be created
-- Create placeholder pages for each page
+- ~Mark pages already present and the ones need to be created~
+- ~Create placeholder pages for each page~
+- Redesign pages to integrate new UI Kit provided
 - Add sub-TTDs to each page to complete it and perform those actions
 - Change all headers to minimal headers
 - Make header transparent and on top of Hero and/or slider

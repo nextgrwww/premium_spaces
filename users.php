@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Manage Users - Builders Bid</title>
 </head>
+<!-- This is the user listing interface that lists all the users and their bried details in tabular form. Clicking the details button allows us to go to the user details page. It also offers administration/managemnet controls to enable/disable users as well as access to the "Edit User Details" page. All of this will only be accessible to the admin/management, which can be controlled by the authentication module already finished in backend in phpScripts folder -->
 <body class="card col-lg-10 col-md-11 mx-auto p-0">
     <?php include "header.php"; ?>
     <!--Carousel Wrapper-->

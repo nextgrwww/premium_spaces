@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./css/addons/datatables.min.css">
     <link rel="stylesheet" href="css/compiled-4.19.2.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Home - Builders Bid</title>
+    <title>User Details - Builders Bid</title>
 </head>
+<!-- This page allows admins to see the complete registration details about a registered user, including access to their clicks and preferences for real estate properties they are looking for. Regular registered users will only be able to see their own information. This again can be controlled by the authentication module already finished in the back-end -->
 <body class="card col-lg-10 col-md-11 mx-auto p-0">
     <?php include "header.php"; ?>
     <!--Carousel Wrapper-->

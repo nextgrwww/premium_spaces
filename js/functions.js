@@ -274,6 +274,7 @@ function JSON2form(JSONStr, formSelector){
                 }
             }
         }
+        
         // Set XHR's request header
         XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // Send JSON data to the PHP script

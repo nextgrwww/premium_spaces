@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./css/addons/datatables.min.css">
     <link rel="stylesheet" href="css/compiled-4.19.2.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Home - Builders Bid</title>
+    <title>Properties - Builders Bid</title>
 </head>
+<!-- This page if for listing real estate properties that have already been added to the database. All users, including admin and management will have access to it -->
 <body class="card col-lg-10 col-md-11 mx-auto p-0">
     <?php include "header.php"; ?>
     <!--Carousel Wrapper-->

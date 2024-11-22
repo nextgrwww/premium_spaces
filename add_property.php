@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./css/addons/datatables.min.css">
     <link rel="stylesheet" href="css/compiled-4.19.2.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Home - Builders Bid</title>
+    <title>Add New Property - Builders Bid</title>
 </head>
+<!-- This page if for adding new real estate properties to the database. Only admin and management will have access to it, which can be controlled by the authentication module already built in the backend in PHP Scripts -->
 <body class="card col-lg-10 col-md-11 mx-auto p-0">
     <?php include "header.php"; ?>
     <!--Carousel Wrapper-->

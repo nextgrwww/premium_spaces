@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./css/addons/datatables.min.css">
     <link rel="stylesheet" href="css/compiled-4.19.2.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Home - Builders Bid</title>
+    <title>Edit Property - Builders Bid</title>
 </head>
+<!-- This page if for editing details of the real estate properties that have already been added to the database, including setting the property status as available or not. Only admin and management will have access to it, which can be controlled by the authentication module already built in the backend in PHP Scripts -->
 <body class="card col-lg-10 col-md-11 mx-auto p-0">
     <?php include "header.php"; ?>
     <!--Carousel Wrapper-->
@@ -78,8 +79,7 @@
                 <!-- Title -->
                 <h4 class="card-title"><a>Card title</a></h4>
                 <!-- Text -->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <!-- Button -->
                 <a href="#" class="btn btn-primary">Button</a>
             

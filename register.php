@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Signup - Builders Bid</title>
 </head>
+<!-- This page allows visitors to get registered to be able to sign-up for newsletters and notifications through email. It also offers ways to recover password through email, if required. Back-end code for recovery is also complete and implemented using PHPMailer library -->
 <body>
     <?php include "header.php"; ?>
     <aside></aside>
